@@ -7,6 +7,7 @@ import { ProjectCard } from "../../components/ui/ProjectCard";
 import { ServiceRow } from "../../components/ui/ServiceRow";
 
 import { HomeHeroVideo } from "../../components/HomeHeroVideo";
+import { publicAsset } from "../../utils/assets";
 
 interface HomePageProps {
   onNavigate: (p: Page) => void;
@@ -86,7 +87,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <Reveal direction="right" delay={150}>
                 <div className="relative group select-none rounded-sm bg-white/90 px-3 py-2 sm:px-5 sm:py-3 shadow-[0_8px_30px_rgba(0,0,0,0.28)] ring-1 ring-white/70 backdrop-blur-sm">
                   <img
-                    src="/logo.png"
+                    src={publicAsset("logo.png")}
                     alt="BUILDCORE Construction & Consultant"
                     className="h-16 sm:h-24 lg:h-32 w-auto object-contain drop-shadow-[0_2px_5px_rgba(0,0,0,0.35)] transition-transform duration-500 hover:scale-[1.02]"
                   />
@@ -161,7 +162,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 index={idx}
                 title={service.title}
                 tagline={service.tagline}
-                image={servicesData[service.id]?.image ?? "/services/architectural-drawings.jpg"}
+                image={servicesData[service.id]?.image ?? publicAsset("services/architectural-drawings.jpg")}
                 description={servicesData[service.id]?.description ?? service.tagline}
                 features={servicesData[service.id]?.features ?? []}
                 page={service.page}

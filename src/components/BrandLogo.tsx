@@ -1,3 +1,5 @@
+import { publicAsset } from "../utils/assets";
+
 interface BrandLogoProps {
   className?: string;
   size?: "sm" | "md" | "lg" | "xl";
@@ -18,7 +20,7 @@ export default function BrandLogo({
     <div className={`inline-flex items-center select-none ${className}`}>
       {/* Exact original BuildCore logo as provided - seamless on white */}
       <img
-        src="/logo.png"
+        src={publicAsset("logo.png")}
         alt="BUILDCORE Construction & Consultant"
         className={`${heights[size]} w-auto object-contain transition-transform duration-300 hover:scale-[1.02]`}
       />

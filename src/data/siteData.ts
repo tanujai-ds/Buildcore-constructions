@@ -1,4 +1,5 @@
 import { Project, ServiceItem, TeamMember, Article, ProjectUpdate } from "../types";
+import { publicAsset } from "../utils/assets";
 
 export const companyStats = [
   { value: 380, suffix: "+", label: "Projects Delivered", description: "Spanning residential, commercial & industrial" },
@@ -139,7 +140,7 @@ export const servicesData: Record<string, ServiceItem> = {
     page: "services-architectural-drawings",
     tagline: "Comprehensive architectural working drawings, elevations, sections, and municipal sanction documentation.",
     description: "From conceptual schematics through to execution-ready tender sets, BuildCore provides rigorous architectural drafting adhering to national building codes, local development control regulations (DCR), and environmental microclimates. Our drawing sets include comprehensive site masterplans, detailed floor plans, cross-sections, exterior elevations, door-window schedules, and joinery details calibrated to millimeter precision.",
-    image: "/services/architectural-drawings.jpg",
+    image: publicAsset("services/architectural-drawings.jpg"),
     features: [
       "Municipal Authority & Sanction Submission Drawings",
       "Comprehensive Architectural Floor Plans & Sections (1:50 / 1:100)",
@@ -174,7 +175,7 @@ export const servicesData: Record<string, ServiceItem> = {
     page: "services-vastu-plans",
     tagline: "Harmonizing traditional Vastu Shastra principles with modern spatial flow and functional architecture.",
     description: "We synthesize ancient Vedic Vastu Shastra wisdom with modern lifestyle ergonomics and structural efficiency. Every 2D floor layout aligns the 16 cardinal zones (Ashtadikpalaka) and five elements (Pancha Bhootas) — optimizing the placement of the main entrance (Maha Dwar), master suite, kitchen (Agni zone), pooja room (Ishanya), staircase, and borewell/water bodies without compromising contemporary aesthetics, natural illumination, or cross-ventilation.",
-    image: "/services/vastu-plans.jpg",
+    image: publicAsset("services/vastu-plans.jpg"),
     features: [
       "16-Zone Cosmic Energy & Element Balancing Analysis",
       "Orientation Planning for North, East, South & West Facing Plots",
@@ -209,7 +210,7 @@ export const servicesData: Record<string, ServiceItem> = {
     page: "services-3d-modeling-walkthrough",
     tagline: "Hyper-realistic photorealistic 3D visualization, CGI renders, and immersive cinematic walkthroughs.",
     description: "Experience your project with absolute clarity before breaking ground. BuildCore crafts ultra-realistic 3D exterior and interior CGI renderings, day and twilight atmospheric lighting simulations, 360-degree virtual reality tours, and 4K cinematic walkthrough animations. Clients, developers, and investors can experience textures, materials, landscape integration, and spatial proportions with breathtaking visual fidelity.",
-    image: "/services/3D MODELING & WALKTHROUGH.jpeg",
+    image: publicAsset("3D MODELING & WALKTHROUGH.jpeg"),
     features: [
       "Photorealistic Exterior Facade & Architectural CGI Views",
       "High-Detail Interior Visualizations with Custom Lighting",
@@ -244,7 +245,7 @@ export const servicesData: Record<string, ServiceItem> = {
     page: "services-interior-design",
     tagline: "Bespoke residential, corporate, and executive interior environments crafted with timeless sophistication.",
     description: "Our interior design studio merges aesthetics, ergonomics, and material craftsmanship to transform spaces into inspiring living and working environments. We deliver end-to-end interior services: concept mood boards, custom false ceiling layouts, electrical and lighting choreography, modular kitchen design, bespoke wardrobes, curated luxury furniture, and turnkey styling for premium residences and commercial workplaces.",
-    image: "/services/interior-design.jpg",
+    image: publicAsset("services/interior-design.jpg"),
     features: [
       "Custom Modular Kitchen & Wardrobe Joinery Drawings",
       "False Ceiling Layouts with Integrated Cove & Task Illumination",
@@ -279,7 +280,7 @@ export const servicesData: Record<string, ServiceItem> = {
     page: "services-structure-drawings",
     tagline: "Robust, earthquake-resistant structural engineering designs and reinforcement detailing.",
     description: "Structural safety and longevity form the core of every landmark project. BuildCore's certified structural engineering cell produces high-precision structural drawing packages covering foundation framing, column schedules, beam-slab reinforcement, retaining walls, underground water tanks, and structural steel connections — engineered to resist seismic forces and wind dynamics in accordance with relevant national building codes.",
-    image: "/services/structure-drawings.jpg",
+    image: publicAsset("services/structure-drawings.jpg"),
     features: [
       "Foundation Framing Plans (Raft, Isolated & Pile Footings)",
       "RCC Column Layouts, Schedules & Confining Rebar Details",
@@ -314,7 +315,7 @@ export const servicesData: Record<string, ServiceItem> = {
     page: "services-estimating-costing",
     tagline: "Granular Bill of Quantities (BOQ), material take-offs, rate analysis, and budget forecasting.",
     description: "Budget discipline safeguards project profitability. BuildCore's quantity surveyors and cost engineers provide granular Bill of Quantities (BOQ), item-wise material take-offs (cement, structural steel, aggregates, bricks, tiles, paint, MEP), prevailing market rate analysis, and cash flow projections. We protect your capital from unforeseen variations, inflated contractor quotes, and material wastage.",
-    image: "/services/estimating-costing.jpg",
+    image: publicAsset("services/estimating-costing.jpg"),
     features: [
       "Itemized Bill of Quantities (BOQ) with Detailed Technical Specifications",
       "Precision Material Quantity Take-Offs (MTO) for All Construction Stages",
@@ -349,7 +350,7 @@ export const servicesData: Record<string, ServiceItem> = {
     page: "services-landscape-design",
     tagline: "Sustainable landscape architecture, hardscape engineering, botanical curation, and outdoor living environments.",
     description: "Transform outdoor surroundings into vibrant, cohesive living ecosystems. BuildCore's landscape architects craft thoughtful master plans uniting hardscape architecture (pathways, driveways, pergolas, gazebos, retaining walls, biophilic pools) and botanical softscapes (native flora, shade trees, drought-tolerant turf, vertical gardens) integrated with automated water-saving drip irrigation and scenic outdoor lighting.",
-    image: "/services/landscape-design.jpg",
+    image: publicAsset("services/landscape-design.jpg"),
     features: [
       "Master Site Landscape Layout & Spatial Zoning Plans",
       "Hardscape Engineering (Paving, Decks, Boundary Enclosures, Pergolas)",
@@ -384,7 +385,7 @@ export const servicesData: Record<string, ServiceItem> = {
     page: "services-land-advisors",
     tagline: "Strategic land acquisition due diligence, legal title scrutiny, zoning validation, and development feasibility.",
     description: "Securing the right plot requires rigorous technical verification and regulatory mastery. BuildCore acts as your independent land advisory partner — conducting comprehensive revenue title searches, mutation verification, zoning and master plan validation, FSI/FAR potential modeling, soil bearing capacity checks, and infrastructure accessibility audits to de-risk high-value real estate acquisitions.",
-    image: "/services/land-advisors.jpg",
+    image: publicAsset("services/land-advisors.jpg"),
     features: [
       "Comprehensive Title Verification & Revenue Record Scrutiny",
       "Master Plan Zoning, Land-Use Conversion & Statutory Clearance Feasibility",
@@ -419,7 +420,7 @@ export const servicesData: Record<string, ServiceItem> = {
     page: "services-gis-mapping",
     tagline: "Advanced Geospatial Intelligence, drone UAV photogrammetry, contour mapping, and spatial land analysis.",
     description: "Harness precision spatial data to optimize planning and civil infrastructure. BuildCore delivers end-to-end Geospatial Information System (GIS) services: centimeter-accurate drone UAV photogrammetry, LiDAR-assisted contour mapping, cadastral parcel superimposition, Digital Elevation Models (DEM/DTM), hydrological watershed analysis, and interactive web GIS dashboards for developers, urban planners, and infrastructure projects.",
-    image: "/services/gis-mapping.jpg",
+    image: publicAsset("services/gis-mapping.jpg"),
     features: [
       "High-Resolution Drone / UAV Aerial Orthomosaics & Aerial Surveys",
       "Digital Surface Models (DSM) & Digital Elevation Models (DEM/DTM)",

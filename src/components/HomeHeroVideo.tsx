@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react";
+import { publicAsset } from "../utils/assets";
 
 const HERO_VIDEOS = [
-  "/video/7816246-hd_1920_1080_25fps.mp4",
-  "/video/vdieo4.mp4",
-  "/video/video5.mp4",
+  publicAsset("video/7816246-hd_1920_1080_25fps.mp4"),
+  publicAsset("video/vdieo4.mp4"),
+  publicAsset("video/video5.mp4"),
 ];
 
 export function HomeHeroVideo() {
