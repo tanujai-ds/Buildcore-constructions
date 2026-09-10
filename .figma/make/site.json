@@ -1,0 +1,11 @@
+{
+  "title": "BUILDCORE — Construction & Consultant | Melbourne, Australia",
+  "description": "BuildCore delivers precision construction, project management, and advisory services across commercial towers, civil facilities, and luxury residential estates.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

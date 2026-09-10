@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+html,
+body,
+#root {
+  min-height: 100%;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #1A1A1A;
+  font-family: 'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  font-family: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom Minimal Architectural Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F5F4;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4D4D4;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4913A;
+}
+
+@theme {
+  --font-display: 'Outfit', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+  --color-bc-bg: #FFFFFF;
+  --color-bc-surface: #F9F9F8;
+  --color-bc-panel: #FFFFFF;
+  --color-bc-border: #E5E5E5;
+  --color-bc-border-dark: #D4D4D4;
+  --color-bc-text-primary: #111111;
+  --color-bc-text-secondary: #525252;
+  --color-bc-text-muted: #737373;
+  --color-bc-yellow: #D4913A;
+  --color-bc-yellow-light: #E5A13B;
+  --color-bc-yellow-vibrant: #F59E0B;
+}
+
+/* Typography Hierarchy Defaults */
+h1, h2 {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #111111;
+}
+
+h3, h4 {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111111;
+}
+
+p, span, li, input, textarea, select {
+  font-family: 'Manrope', sans-serif;
+}
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Accessibility & Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee {
+    animation: none !important;
+  }
+}
+
+/* Clean accessible focus indicators */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #D4913A;
+  outline-offset: 2px;
+}
+
+/* Selection highlight */
+::selection {
+  background: #D4913A;
+  color: #FFFFFF;
+}
