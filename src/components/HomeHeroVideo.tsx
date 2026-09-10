@@ -9,9 +9,18 @@ const HERO_VIDEOS = [
 
 export function HomeHeroVideo() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
   const [fadeState, setFadeState] = useState<"in" | "out">("in");
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const playVideo = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.play().catch(() => {
+      // Autoplay can still be blocked by a browser policy until interaction.
+    });
+  };
 
   const handleVideoEnded = () => {
     // Smooth crossfade out before advancing
@@ -25,17 +34,10 @@ export function HomeHeroVideo() {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
+      video.muted = true;
       video.currentTime = 0;
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => setIsPlaying(true))
-          .catch(() => {
-            // Autoplay with sound might be blocked, ensure muted
-            video.muted = true;
-            video.play().catch(() => {});
-          });
-      }
+      video.load();
+      playVideo();
     }
   }, [currentIndex]);
 
@@ -49,7 +51,10 @@ export function HomeHeroVideo() {
         autoPlay
         muted
         playsInline
-        preload="metadata"
+        preload="auto"
+        onLoadedData={playVideo}
+        onCanPlay={playVideo}
+        onError={() => setCurrentIndex((prev) => (prev + 1) % HERO_VIDEOS.length)}
         onEnded={handleVideoEnded}
         className={`w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
           fadeState === "in" ? "opacity-100 scale-100" : "opacity-0 scale-[1.02]"
