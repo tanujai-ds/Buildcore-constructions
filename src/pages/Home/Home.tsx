@@ -142,8 +142,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* ─── 2. SERVICES SECTION ───────────────────────────────────────────── */}
-      <section className="py-24 lg:py-32 bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <section className="relative overflow-hidden py-24 lg:py-32 bg-white">
+        <img
+          src={publicAsset("services/helmet-transparent.png")}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-32 top-4 z-0 hidden h-[285px] w-[480px] -translate-x-[20%] -translate-y-[15%] object-contain object-right opacity-85 md:block lg:h-[360px] lg:w-[600px]"
+        />
+        <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12">
           <SectionHeading
             label="01 / WHAT WE DO"
             title="OUR SERVICES"

@@ -9,7 +9,6 @@ interface AboutCompanyProps {
 
 export function AboutCompany({ onNavigate }: AboutCompanyProps) {
   const credentials = [
-    { label: "FOUNDED", value: "2002, Melbourne VIC Australia" },
     { label: "HEADCOUNT", value: "127 Full-Time Engineers, Managers & Trades" },
     { label: "BUILDER LICENCE", value: "Commercial & Domestic Unlimited (CDB-U / DBU)" },
     { label: "INSURANCE COVERAGE", value: "$50M Public Liability, $20M Professional Indemnity" },
@@ -42,7 +41,7 @@ export function AboutCompany({ onNavigate }: AboutCompanyProps) {
 
               <Reveal direction="up" delay={80}>
                 <p className="text-base text-[#525252] leading-relaxed font-normal">
-                  Founded in Melbourne in 2002 by brothers James and Daniel Reeves, BuildCore was conceived with a clear mission: to combine the rigorous systems, safety governance, and procurement power of a Tier-1 contractor with the personal accessibility and craftsmanship of a dedicated boutique firm.
+                  BuildCore was conceived with a clear mission: to combine the rigorous systems, safety governance, and procurement power of a Tier-1 contractor with the personal accessibility and craftsmanship of a dedicated boutique firm.
                 </p>
               </Reveal>
 

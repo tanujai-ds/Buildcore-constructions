@@ -16,14 +16,15 @@ export function AboutTeam({ onNavigate }: AboutTeamProps) {
         title="LEADERSHIP & ENGINEERS"
         subtitle="Experienced construction directors, registered master builders, and certified project superintendents directly involved in the field delivery of your build."
         image="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=700&fit=crop&auto=format"
+        foregroundImage="/services/sohan-transparent.png"
       />
 
       <section className="py-24 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex justify-center">
             {teamMembers.map((member, idx) => (
               <Reveal key={member.name} direction="up" delay={idx * 80}>
-                <div className="group bg-[#FBFBFA] border border-[#E5E5E5] overflow-hidden transition-all duration-300 hover:border-[#D4913A] hover:shadow-md flex flex-col justify-between h-full rounded-xs">
+                <div className="group w-full max-w-sm bg-[#FBFBFA] border border-[#E5E5E5] overflow-hidden transition-all duration-300 hover:border-[#D4913A] hover:shadow-md flex flex-col justify-between h-full rounded-xs">
                   {/* Portrait with grayscale to color hover */}
                   <div className="aspect-[4/3] sm:aspect-[1/1] overflow-hidden bg-[#F0F0EF] relative">
                     <img

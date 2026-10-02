@@ -6,10 +6,11 @@ interface PageHeroProps {
   title: string;
   subtitle?: string;
   image?: string;
+  foregroundImage?: string;
   actions?: React.ReactNode;
 }
 
-export function PageHero({ label, title, subtitle, image, actions }: PageHeroProps) {
+export function PageHero({ label, title, subtitle, image, foregroundImage, actions }: PageHeroProps) {
   return (
     <section className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 md:pt-40 md:pb-24 overflow-hidden bg-[#FBFBFA] border-b border-[#E5E5E5]">
       {/* Background imagery with subtle light scrim */}
@@ -24,10 +25,19 @@ export function PageHero({ label, title, subtitle, image, actions }: PageHeroPro
         </>
       )}
 
+      {foregroundImage && (
+        <img
+          src={foregroundImage}
+          alt=""
+          aria-hidden="true"
+          className="absolute right-0 bottom-0 hidden h-[92%] w-[34%] -translate-x-[25%] object-contain object-bottom opacity-90 md:block"
+        />
+      )}
+
       {/* Subtle architectural grid pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#D4D4D4_1px,transparent_1px)] [background-size:32px_32px] opacity-40 pointer-events-none" />
 
-      <div className="relative max-w-[1440px] mx-auto px-6 lg:px-12 w-full">
+      <div className="relative max-w-[1440px] mx-auto px-6 lg:px-12 w-full md:max-w-[68%] md:mr-auto md:ml-0 lg:max-w-[1440px]">
         <Reveal direction="up" delay={50}>
           {/* Eyebrow Breadcrumb with Yellow Line */}
           <div className="flex items-center gap-3.5 mb-6">

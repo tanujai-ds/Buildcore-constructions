@@ -1,4 +1,5 @@
 import { Page } from "../types";
+import { companyAddress } from "../data/siteData";
 import BrandLogo from "./BrandLogo";
 
 interface FooterProps {
@@ -107,8 +108,7 @@ export function Footer({ onNavigate }: FooterProps) {
                   OFFICE
                 </span>
                 <p className="text-[#111111] leading-relaxed">
-                  Level 12, 200 Queen Street<br />
-                  Melbourne VIC 3000, Australia
+                  {companyAddress}
                 </p>
               </div>
               <div>
@@ -116,10 +116,10 @@ export function Footer({ onNavigate }: FooterProps) {
                   DIRECT LINE
                 </span>
                 <a
-                  href="tel:+61390001234"
+                  href="tel:+9172680913"
                   className="text-[#111111] hover:text-[#D4913A] transition-colors"
                 >
-                  +61 3 9000 1234
+                  +91 72680 913
                 </a>
               </div>
               <div>

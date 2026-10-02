@@ -1,6 +1,9 @@
 import { Project, ServiceItem, TeamMember, Article, ProjectUpdate } from "../types";
 import { publicAsset } from "../utils/assets";
 
+export const companyAddress =
+  "Old Rto road, 472/A, Mane Colony, Suryawanshi Colony, Karanje Turf Satara, Satara, Maharashtra 415001";
+
 export const companyStats = [
   { value: 380, suffix: "+", label: "Projects Delivered", description: "Spanning residential, commercial & industrial" },
   { value: 2.1, prefix: "$", suffix: "B+", label: "Construction Value", description: "Total capital value managed on schedule", decimals: 1 },
@@ -210,7 +213,7 @@ export const servicesData: Record<string, ServiceItem> = {
     page: "services-3d-modeling-walkthrough",
     tagline: "Hyper-realistic photorealistic 3D visualization, CGI renders, and immersive cinematic walkthroughs.",
     description: "Experience your project with absolute clarity before breaking ground. BuildCore crafts ultra-realistic 3D exterior and interior CGI renderings, day and twilight atmospheric lighting simulations, 360-degree virtual reality tours, and 4K cinematic walkthrough animations. Clients, developers, and investors can experience textures, materials, landscape integration, and spatial proportions with breathtaking visual fidelity.",
-    image: publicAsset("3D MODELING & WALKTHROUGH.jpeg"),
+    image: publicAsset("services/qqq.jpeg"),
     features: [
       "Photorealistic Exterior Facade & Architectural CGI Views",
       "High-Detail Interior Visualizations with Custom Lighting",
@@ -584,52 +587,12 @@ export const servicesData: Record<string, ServiceItem> = {
 
 export const teamMembers: TeamMember[] = [
   {
-    name: "James Reeves",
-    role: "Managing Director",
-    credentials: "B.Eng (Civil) Hons, FIEAust, Registered Master Builder",
-    tenure: "Founding leadership",
-    bio: "Co-founding BuildCore in 2002, James has steered the company from a boutique craft builder into an Australian construction leader. He maintains direct executive oversight on major tier-two commercial developments.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop&auto=format",
-  },
-  {
-    name: "Daniel Reeves",
-    role: "Executive Director — Operations",
-    credentials: "B.App.Sc (Construction Mgmt), AIPM Certified",
-    tenure: "Founding leadership",
-    bio: "Daniel leads site operations, trade contractor networks, and quality assurance. His on-site presence and unwavering standard for technical precision define the BuildCore field culture.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=750&fit=crop&auto=format",
-  },
-  {
-    name: "Sarah Ng",
-    role: "General Manager — Construction",
-    credentials: "B.Arch, M.Project Management, Green Star AP",
-    tenure: "14 years with BuildCore",
-    bio: "Sarah manages the active construction pipeline across Victoria and NSW. She specializes in large-scale commercial structures, complex basement retention, and sustainable mass timber framing.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=750&fit=crop&auto=format",
-  },
-  {
-    name: "Marcus Webb",
-    role: "Head of Project Management",
-    credentials: "B.Building, PMP, Certified Cost Engineer",
-    tenure: "11 years with BuildCore",
-    bio: "Marcus directs our client advisory and project controls division, pioneering predictive scheduling algorithms and open-book cost reporting platforms for institutional property owners.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=750&fit=crop&auto=format",
-  },
-  {
-    name: "Priya Mehta",
-    role: "Head of Design & Planning",
-    credentials: "B.Design (Arch), M.Urban Planning",
-    tenure: "8 years with BuildCore",
-    bio: "Priya steers design teams through early feasibility, planning schemes, and BIM coordination, eliminating constructability conflicts before procurement.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=750&fit=crop&auto=format",
-  },
-  {
-    name: "Tom O'Brien",
-    role: "HSE & Quality Director",
-    credentials: "Grad.Dip Occupational Health & Safety, Lead Auditor ISO 45001",
-    tenure: "6 years with BuildCore",
-    bio: "Tom enforces our rigorous health, safety, environmental, and quality systems across all active jobsites, maintaining our benchmark-setting zero-incident track record.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=750&fit=crop&auto=format",
+    name: "Sohan Sulke",
+    role: "Founder & CEO",
+    credentials: "Construction Director, Registered Master Builder",
+    tenure: "BuildCore Leadership",
+    bio: "Sohan leads BuildCore with a direct, field-focused approach to design, construction, and project delivery.",
+    image: "/services/sohan.png",
   },
 ];
 

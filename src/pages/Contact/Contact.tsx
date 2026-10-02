@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Page } from "../../types";
+import { companyAddress } from "../../data/siteData";
 import { PageHero } from "../../components/ui/PageHero";
 import { Button } from "../../components/ui/Button";
 
@@ -66,7 +67,7 @@ export function ContactPage({ type, onNavigate }: ContactProps) {
         subtitle={
           isProject
             ? "Submit your architectural brief or procurement plans. Our executive estimating team reviews all tender submissions within one business day."
-            : "Direct access to our Melbourne headquarters for corporate partnerships, trade panel registration, and media enquiries."
+            : "Direct access to our Satara headquarters for corporate partnerships, trade panel registration, and media enquiries."
         }
         image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&h=700&fit=crop&auto=format"
       />
@@ -179,7 +180,7 @@ export function ContactPage({ type, onNavigate }: ContactProps) {
                         required={isProject}
                         value={form.phone}
                         onChange={handleChange}
-                        placeholder="e.g. +61 400 000 000"
+                        placeholder="e.g. +91 72680 913"
                         className="w-full px-4 py-3 bg-white border border-[#D4D4D4] focus:border-[#D4913A] text-sm text-[#111111] focus:outline-none transition-colors placeholder-[#A3A3A3] font-normal rounded-xs shadow-xs"
                       />
                     </div>
@@ -226,11 +227,10 @@ export function ContactPage({ type, onNavigate }: ContactProps) {
 
                 <div>
                   <span className="text-[10px] tracking-[0.14em] text-[#D4913A] uppercase font-semibold block mb-1">
-                    MELBOURNE CBD OFFICE
+                    SATARA OFFICE
                   </span>
                   <p className="text-sm text-[#111111] leading-relaxed font-normal">
-                    Level 12, 200 Queen Street<br />
-                    Melbourne VIC 3000, Australia
+                    {companyAddress}
                   </p>
                 </div>
 
@@ -239,10 +239,10 @@ export function ContactPage({ type, onNavigate }: ContactProps) {
                     DIRECT TELEPHONE
                   </span>
                   <a
-                    href="tel:+61390001234"
+                    href="tel:+9172680913"
                     className="text-sm text-[#111111] hover:text-[#D4913A] transition-colors font-medium"
                   >
-                    +61 3 9000 1234
+                    +91 72680 913
                   </a>
                 </div>
 

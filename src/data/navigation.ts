@@ -6,9 +6,7 @@ export const navItems: NavItem[] = [
     label: "ABOUT",
     children: [
       { label: "Company", page: "about-company", description: "Our history, values, leadership and standards." },
-      { label: "Our Approach", page: "about-approach", description: "Our 6 core delivery pillars and QA methodology." },
       { label: "Team", page: "about-team", description: "Experienced directors, project leads and site engineers." },
-      { label: "Why BuildCore", page: "about-why", description: "Our track record, differentiators and testimonials." },
     ],
   },
   {
@@ -42,11 +40,5 @@ export const navItems: NavItem[] = [
       { label: "Project Updates", page: "insights-updates", description: "Live site progress reports & milestones." },
     ],
   },
-  {
-    label: "CONTACT",
-    children: [
-      { label: "Start a Project", page: "contact-project", description: "Submit your project brief for tender review." },
-      { label: "General Enquiry", page: "contact-general", description: "Head office, phone, careers and partnerships." },
-    ],
-  },
+  { label: "CONTACT", page: "contact-general" },
 ];
