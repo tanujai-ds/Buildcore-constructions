@@ -17,7 +17,9 @@ const allowedOrigin = process.env.ALLOWED_ORIGIN || "http://localhost:8443";
 const companyName = "BuildCore Construction & Consultant";
 const companyPhone = "+91 91726 80913";
 
-const dataDir = join(__dirname, "data");
+const dataDir = process.env.NETLIFY
+  ? join(process.env.TMPDIR || "/tmp", "buildcore-data")
+  : join(__dirname, "data");
 const enquiriesFile = join(dataDir, "enquiries.json");
 
 // Ensure data directory exists
