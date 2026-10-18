@@ -26,12 +26,18 @@ export function PageHero({ label, title, subtitle, image, foregroundImage, actio
       )}
 
       {foregroundImage && (
-        <img
-          src={foregroundImage}
-          alt=""
-          aria-hidden="true"
-          className="absolute right-0 bottom-0 hidden h-[92%] w-[34%] -translate-x-[25%] object-contain object-bottom opacity-90 md:block"
-        />
+        <div className="absolute right-0 bottom-0 hidden h-[92%] w-[34%] -translate-x-[25%] md:block">
+          {/* White backing ensures transparent PNGs show cleanly against any background */}
+          <div className="relative h-full w-full">
+            <div className="absolute inset-0 rounded-tl-2xl bg-white/60 blur-xl" />
+            <img
+              src={foregroundImage}
+              alt=""
+              aria-hidden="true"
+              className="relative h-full w-full object-contain object-bottom opacity-95 drop-shadow-xl"
+            />
+          </div>
+        </div>
       )}
 
       {/* Subtle architectural grid pattern */}

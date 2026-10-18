@@ -23,11 +23,11 @@ export function Button({
 
   const variantStyles = {
     primary:
-      "bg-[#D4913A] text-white font-semibold hover:bg-[#E5A13B] border border-[#D4913A] shadow-xs rounded-xs",
+      "bg-[#171717] text-[#F7EAD2] font-semibold border border-[#D4913A]/75 shadow-[0_10px_25px_rgba(212,145,58,0.18)] rounded-xs hover:bg-gradient-to-r hover:from-[#D4913A] hover:via-[#E0A94F] hover:to-[#F0C879] hover:text-[#151515] hover:border-[#F0C879]",
     secondary:
       "bg-white text-[#111111] font-semibold hover:bg-[#F9F9F8] border border-[#E5E5E5] shadow-xs rounded-xs",
     outline:
-      "bg-transparent text-[#111111] font-semibold border border-[#111111]/30 hover:border-[#111111] hover:bg-[#111111]/5 rounded-xs",
+      "bg-[#111111]/85 text-[#F8F1E1] font-semibold border border-[#D4913A]/70 shadow-[0_10px_22px_rgba(17,17,17,0.2)] rounded-xs hover:bg-[#D4913A] hover:text-[#171717] hover:border-[#D4913A]",
     link:
       "bg-transparent text-[#D4913A] font-semibold hover:text-[#E5A13B] p-0 border-0",
   };

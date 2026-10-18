@@ -1,10 +1,12 @@
+import type { CSSProperties } from "react";
+
 interface MarqueeProps {
   items?: string[];
   speedSec?: number;
   className?: string;
 }
 
-export function Marquee({
+export default function Marquee({
   items = [
     "PRECISION CONSTRUCTION",
     "PROJECT MANAGEMENT",
@@ -13,15 +15,17 @@ export function Marquee({
     "FEASIBILITY & CONSULTING",
     "BIM INTEGRATION",
   ],
+  speedSec = 40,
   className = "",
 }: MarqueeProps) {
   const repeated = [...items, ...items, ...items];
+  const marqueeStyle = { "--marquee-duration": `${speedSec}s` } as CSSProperties;
 
   return (
     <div
       className={`py-5 border-y border-[#E5E5E5] bg-[#FBFBFA] overflow-hidden select-none whitespace-nowrap flex ${className}`}
     >
-      <div className="flex animate-marquee items-center shrink-0">
+      <div className="flex animate-marquee items-center shrink-0" style={marqueeStyle}>
         {repeated.map((item, idx) => (
           <div key={idx} className="flex items-center">
             <span className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-[#525252] hover:text-[#D4913A] transition-colors px-6">
@@ -31,7 +35,11 @@ export function Marquee({
           </div>
         ))}
       </div>
-      <div className="flex animate-marquee items-center shrink-0" aria-hidden="true">
+      <div
+        className="flex animate-marquee items-center shrink-0"
+        style={marqueeStyle}
+        aria-hidden="true"
+      >
         {repeated.map((item, idx) => (
           <div key={`dup-${idx}`} className="flex items-center">
             <span className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-[#525252] hover:text-[#D4913A] transition-colors px-6">

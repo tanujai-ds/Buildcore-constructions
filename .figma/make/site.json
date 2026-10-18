@@ -1,11 +1,17 @@
 {
-  "title": "BUILDCORE — Construction & Consultant | Melbourne, Australia",
-  "description": "BuildCore delivers precision construction, project management, and advisory services across commercial towers, civil facilities, and luxury residential estates.",
+  "title": "BuildCore Construction & Consultant",
+  "description": "Premium construction, architectural, and consulting services in Satara, Maharashtra.",
+  "language": "en",
   "robots": {
-    "index": false
+    "index": true
+  },
+  "icons": {
+    "icon": "/logo.png"
+  },
+  "openGraph": {
+    "image": "/logo.png"
   },
   "accessibility": {
-    "addBypassLinks": false,
-    "ignoreReducedMotion": false
+    "addBypassLinks": true
   }
 }

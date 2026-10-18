@@ -20,6 +20,7 @@ export function ContactPage({ type, onNavigate }: ContactProps) {
     email: "",
     phone: "",
     message: "",
+    website: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -35,16 +36,14 @@ export function ContactPage({ type, onNavigate }: ContactProps) {
           name: form.name,
           email: form.email,
           phone: form.phone,
-          message: isProject ? "" : form.message,
+          message: form.message,
           enquiryType: isProject ? "project" : "general",
+          website: form.website,
         }),
       });
 
       const result = await response.json();
-      if (!response.ok) {
-        throw new Error(result.message || "Unable to send your request.");
-      }
-
+      if (!response.ok) throw new Error(result.message || "Unable to send your request.");
       setSubmitted(true);
     } catch (error) {
       setSubmitError(error instanceof Error ? error.message : "Unable to send your request.");
@@ -85,8 +84,18 @@ export function ContactPage({ type, onNavigate }: ContactProps) {
           >
             START A PROJECT (TENDER BRIEF)
           </button>
+          <button
+            onClick={() => onNavigate("contact-general")}
+            className={`py-4 px-6 text-xs tracking-[0.14em] font-semibold uppercase transition-colors border-b-2 cursor-pointer ${
+              !isProject
+                ? "border-[#D4913A] text-[#D4913A] bg-white"
+                : "border-transparent text-[#737373] hover:text-[#111111]"
+            }`}
+          >
+            GENERAL ENQUIRY
+          </button>
           <a
-            href="https://wa.me/9172680913"
+            href="https://wa.me/919172680913"
             target="_blank"
             rel="noreferrer"
             className="py-4 px-6 text-xs tracking-[0.14em] font-semibold uppercase transition-colors border-b-2 border-transparent text-[#737373] hover:text-[#111111] cursor-pointer"
@@ -114,10 +123,10 @@ export function ContactPage({ type, onNavigate }: ContactProps) {
                     </svg>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111111] uppercase mb-3">
-                    BRIEF TRANSMITTED SUCCESSFULLY
+                    ENQUIRY SENT SUCCESSFULLY
                   </h3>
                   <p className="text-sm text-[#525252] max-w-md mx-auto mb-8 leading-relaxed font-normal">
-                    Thank you, {form.name || "Client"}. Your project submission has been routed directly to Managing Director James Reeves and our head of pre-construction estimating. We will review and provide an initial response within one business day.
+                    Thank you, {form.name || "Client"}. Your enquiry has been received and a confirmation has been sent to <strong>{form.email}</strong>. Our team will respond within one business day.
                   </p>
                   <Button variant="outline" onClick={() => setSubmitted(false)}>
                     SUBMIT ANOTHER TRANSMISSION
@@ -172,12 +181,11 @@ export function ContactPage({ type, onNavigate }: ContactProps) {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-xs font-semibold tracking-[0.12em] text-[#D4913A] uppercase mb-2">
-                        MOBILE NUMBER *
+                        MOBILE NUMBER
                       </label>
                       <input
                         type="tel"
                         name="phone"
-                        required={isProject}
                         value={form.phone}
                         onChange={handleChange}
                         placeholder="e.g. +91 72680 913"
@@ -186,9 +194,23 @@ export function ContactPage({ type, onNavigate }: ContactProps) {
                     </div>
                   </div>
 
-                  {!isProject && <div>
+                  <div className="absolute left-[-9999px]" aria-hidden="true">
+                    <label htmlFor="website">Website</label>
+                    <input
+                      id="website"
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={form.website}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  {/* Message / Requirements — shown for both project and general */}
+                  <div>
                     <label className="block text-xs font-semibold tracking-[0.12em] text-[#D4913A] uppercase mb-2">
-                      MESSAGE / ENQUIRY *
+                      {isProject ? "PROJECT REQUIREMENTS *" : "MESSAGE / ENQUIRY *"}
                     </label>
                     <textarea
                       name="message"
@@ -196,10 +218,10 @@ export function ContactPage({ type, onNavigate }: ContactProps) {
                       rows={5}
                       value={form.message}
                       onChange={handleChange}
-                      placeholder="How may we direct your enquiry?"
+                      placeholder={isProject ? "Describe your project — type of construction, location, budget, timeline, special requirements..." : "How may we direct your enquiry?"}
                       className="w-full px-4 py-3 bg-white border border-[#D4D4D4] focus:border-[#D4913A] text-sm text-[#111111] focus:outline-none transition-colors placeholder-[#A3A3A3] resize-none font-normal rounded-xs shadow-xs"
                     />
-                  </div>}
+                  </div>
 
                   <div className="pt-4 border-t border-[#E5E5E5] flex items-center justify-between">
                     <span className="text-[11px] text-[#B42318] font-medium">
@@ -211,7 +233,7 @@ export function ContactPage({ type, onNavigate }: ContactProps) {
                       size="lg"
                       disabled={submitting}
                     >
-                      {submitting ? "TRANSMITTING..." : isProject ? "SUBMIT BRIEF →" : "SEND ENQUIRY →"}
+                      {submitting ? "SENDING..." : isProject ? "SUBMIT BRIEF →" : "SEND ENQUIRY →"}
                     </Button>
                   </div>
                 </form>
@@ -239,22 +261,22 @@ export function ContactPage({ type, onNavigate }: ContactProps) {
                     DIRECT TELEPHONE
                   </span>
                   <a
-                    href="tel:+9172680913"
+                    href="tel:+919172680913"
                     className="text-sm text-[#111111] hover:text-[#D4913A] transition-colors font-medium"
                   >
-                    +91 72680 913
+                    +91 91726 80913
                   </a>
                 </div>
 
                 <div>
                   <span className="text-[10px] tracking-[0.14em] text-[#D4913A] uppercase font-semibold block mb-1">
-                    EMAIL DISPATCH
+                    EMAIL
                   </span>
                   <a
-                    href="mailto:enquiries@buildcore.com.au"
-                    className="text-sm text-[#D4913A] hover:underline font-medium"
+                    href="mailto:buildcoreconstructions@gmail.com"
+                    className="text-sm text-[#D4913A] hover:underline font-medium break-all"
                   >
-                    enquiries@buildcore.com.au
+                    buildcoreconstructions@gmail.com
                   </a>
                 </div>
 
@@ -263,7 +285,7 @@ export function ContactPage({ type, onNavigate }: ContactProps) {
                     OPERATING HOURS
                   </span>
                   <p className="text-xs text-[#525252] font-normal">
-                    Monday – Friday: 07:00 – 18:00 AEST<br />
+                    Monday – Saturday: 09:00 – 18:00 IST<br />
                     Emergency site superintendent on call 24/7
                   </p>
                 </div>
